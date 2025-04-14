@@ -29,7 +29,7 @@ next section.
 - No public access to S3 is required for the installation.
 
 ### Customer Data
- - Customer data is limited to a users e-mail address.  This address is stored in an encrypted format in the database at the column level.  This RDS database will be encrypted at rest by default.
+ - Customer data stored by AI Vault is limited to a user's e-mail address.  This address is stored in an encrypted format in the database at the column level.  This RDS database will be encrypted at rest by default.
 
  ## Build or prepare the infrastructure.
 
