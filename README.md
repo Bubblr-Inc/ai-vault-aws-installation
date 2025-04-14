@@ -13,7 +13,8 @@ To successfully run and install an AI-Vault instance the following components ar
 | --------------- | ------------- |
 | Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
 | DNS Entry | A DNS entry pointing to the loadbalancer enpoint  |
-| Kubernetes Cluster | Kubernetes cluster will run the AI Vault containers |
+| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
+| Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
