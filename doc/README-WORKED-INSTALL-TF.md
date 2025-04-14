@@ -1,4 +1,4 @@
-# Installating with with Terraform
+# Installing with with Terraform
 
 The following example will start with an empty AWS account and will build AI Vault installation.
 
