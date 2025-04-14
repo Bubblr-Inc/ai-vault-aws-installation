@@ -3,6 +3,10 @@
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
 
 ## Requirements
+
+### Skill Requirements
+
+### Infrastructure Requirements
 To successfully run and install an AI-Vault instance the following components are required:
 
 | Component       | Description |
