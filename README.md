@@ -54,7 +54,8 @@ next section.
  ## Build or prepare the infrastructure.
 
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
-This process generally takes around 1 hr to complete, although DNS propagation may take longer.
+
+``` _Note_ This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 ## Installation of Helm Chart
 
 1. Prepare a values file for your installation.
