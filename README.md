@@ -10,8 +10,6 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 
 ![Ai-Vault on EKS Architecture](doc/AI-Vault-Architecture-Diagram-v1.png?raw=true "Title")
 
-AI-Vault-Architecture-Diagram-v1.png
-
 To successfully run  an AI-Vault instance the following components are required and you should expect to run these components (or their alternative - see note ) at a minimum to successfully run and AI instalation.
 
 | Component       | Description |
