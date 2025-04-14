@@ -23,7 +23,7 @@ next section.
 ## Security Statement
 
 ### Resources
-- AI Helm chart doesn't require the usage of the AWS rot account. All installation uses the IAM as recommended by AWS best practices.
+- AI Helm chart doesn't require the usage of the AWS root account. All installation and running processes use IAM roles and policies as recommended by AWS best practices.
 - AI Helm chart is installed on AWS EKS. the AI workload need access to and RDS postgres database only.
 - A public load balancer is required to publish the AI-Vault URL.
 - No public access to S3 is required for the installation.
