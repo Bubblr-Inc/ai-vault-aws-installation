@@ -23,7 +23,8 @@ To successfully run  an AI-Vault instance the following components are required 
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |
 
 ```
-_Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress, you may use your own managed Postgres or Kubernetes on bare EC2 
+_Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
+and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
 ```
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
