@@ -3,7 +3,7 @@
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
 
 ## AI Vault Architecture
-The architecture of AI seek is a fairly simple one consisting of a edge ingress via load balancer, a kubernetes deployment and a database.  in AWS terms this comonnly means an ALB load balancer, an EKS jubernetes ckuster and a postgres database.  This is the architecture that AI seek is gneralyl recommended.
+The architecture of AI seek is a fairly simple one consisting of a edge ingress via load balancer, a kubernetes deployment and a database.  in AWS terms this comonnly means an ALB load balancer, an EKS kubernetes ckuster and a postgres database.  This is the architecture that AI-Vault is generally recommended.
 
 ![Ai-Vault on EKS Architecture](doc/AI-Vault-Architecture-Diagram-v1.png?raw=true "Title")
 
