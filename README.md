@@ -15,8 +15,17 @@ To successfully run and install an AI-Vault instance the following components ar
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
 
-## Build or prepare the infrastructure.
-AI-Vault needs to be run in on infrastructure such as an AWS VPC and EKS setup.
+## Security Statement
+
+### Resources
+- AI Helm chart is installed on AWS EKS. the AI workload need access to and RDS postgres database only.
+- A public load balancer is required to publish the AI-Vault URL.
+- No public access to S3 is required for the installation.
+
+### Customer Data
+ - Customer data is limited to a users e-mail address.  This address is stored in an encrypted format in the database this database will be encrypted by default.
+
+ ## Build or prepare the infrastructure.
 
 This can be done a number of ways however, we generally use terraform so to setup the infrastrucutre required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
 
