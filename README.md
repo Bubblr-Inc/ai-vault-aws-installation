@@ -12,15 +12,19 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 
 AI-Vault-Architecture-Diagram-v1.png
 
-To successfully run and install an AI-Vault instance the following components are required:
+To successfully run  an AI-Vault instance the following components are required and you should expect to run these components (or their alternative - see note ) at a minimum to successfully run and AI instalation.
 
 | Component       | Description |
 | --------------- | ------------- |
-| Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
+| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
 | DNS Entry | A DNS entry pointing to the loadbalancer enpoint  |
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
 | Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |
+
+```
+_Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress, you may use your own managed Postgres or Kubernetes on bare EC2 
+```
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
