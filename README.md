@@ -16,13 +16,13 @@ If you have these already prepared you may skip to the _Installation of the Helm
 next section.
 
 ## Build or prepare the infrastructure.
-AI-Vault needs to be run in on infrastructure such as an AWS VPC and EKS setup. 
+AI-Vault needs to be run in on infrastructure such as an AWS VPC and EKS setup.
 
-This can be done a number of ways however, we generally use terraform so to setup the infrastrucutre required by AI-Vault please use [this guide that describes how to do this](README-WORKED-INSTALL-TF.md)
+This can be done a number of ways however, we generally use terraform so to setup the infrastrucutre required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
 
 ## Installation of Helm Chart
 
-1. Prepare a values file for your installation.  
+1. Prepare a values file for your installation.
 Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
 _NOTE_ You will likely need an ALB Load Balancer to expose your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
 
@@ -41,7 +41,7 @@ env:
 
 
 ### Authenticate to AWS ECR
-Authenticate your Helm client to the Amazon ECR registry holding the AI Vault Helm Chart. 
+Authenticate your Helm client to the Amazon ECR registry holding the AI Vault Helm Chart.
 
 ```
 aws ecr get-login-password \
@@ -67,7 +67,7 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 
 3. Make an a note of  the ACM certifcates' ARN
 
-4. Make a note of your public subnets ids. 
+4. Make a note of your public subnets ids.
 
 5. Add an ingress section like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as your EKS cluster you are deploying the helm chart to.
 
@@ -75,7 +75,7 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 ingress:
   enabled: true
   className: "alb"
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: /v1/client/health
@@ -121,7 +121,7 @@ helm template ai-vault-helm .
 
 ### Packaging and Pushing Helm Chart
 1. Create helm package package
--  From the directory above the repo create 
+-  From the directory above the repo create
 ```
 helm package ai-vault-helm
 ```
