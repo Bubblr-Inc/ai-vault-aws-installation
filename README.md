@@ -53,12 +53,13 @@ next section.
 
 ### Principal of Least Priviledge
 - AI Vault containers require read and write access to a RDS postgres database only.  They do not require access to any other AWS resources and therefore do not need to run with a powerful IAM role.  Please ensure when setting up you do not inadvertantly assign unnecessary IAM permissions or roles.
-- 
+  
  ## Build or prepare the infrastructure.
 
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
 
 ``` _Note_ This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
+
 ## Installation of Helm Chart
 
 1. Prepare a values file for your installation.
@@ -77,7 +78,6 @@ env:
   mailServerPort: "587"
   smtpLoginId: "support@bubblr.com"
 ```
-
 
 ### Authenticate to AWS ECR
 Authenticate your Helm client to the Amazon ECR registry holding the AI Vault Helm Chart.
@@ -139,3 +139,6 @@ ingress:
 ```
 helm uninstall ai-vault-helm -n ai-vault-ns
 ```
+## Backup And Restore
+Please see the following section on backup and restore for AI-Vault database.
+![Ai-Vault on EKS Architecture](doc/BACKUPRESTORE.md)
