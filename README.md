@@ -51,6 +51,9 @@ next section.
 ### Customer Data
  - Customer data stored by AI Vault is limited to a user's e-mail address.  This address is stored in an encrypted format in the database at the column level.  This RDS database will be encrypted at rest by default.
 
+### Principal of Least Prviledge
+- AI Vault containers require read and write access to a RDS postgres database only.  They do not require access to any other AWS resources and therefore do not need to run with a powerful IAM role.  Please ensure when setting up you do not inadvertantly assign unnecessary IAM permissions or roles.
+- 
  ## Build or prepare the infrastructure.
 
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
