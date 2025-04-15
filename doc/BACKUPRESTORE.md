@@ -20,4 +20,4 @@ These are the options available to you to restore  an RDS database from a Snapsh
 
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.RestoringFromSnapshot.html
 
-```_Note_  Restoring from a snapshot will create a new independant RDS database instance.  This will have its own new connection path / url.  Please note that this will need to be updated via your helm chart.
+``` _Note_  Restoring from a snapshot will create a new independant RDS database instance.  This will have its own new connection path / url.  Please note that this will need to be updated via your helm chart.```
