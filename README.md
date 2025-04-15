@@ -32,6 +32,8 @@ To successfully run  an AI-Vault instance the following components are required 
 | Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |
 
+[Costs Estimates can be found here:](doc/COST.md)
+
 ```
 _Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
 and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
