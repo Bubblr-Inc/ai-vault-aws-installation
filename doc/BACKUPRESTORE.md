@@ -9,6 +9,8 @@ Backing up an Amazon Relational Database Service (RDS) database is the only part
 
    https://aws.amazon.com/blogs/storage/point-in-time-recovery-and-continuous-backup-for-amazon-rds-with-aws-backup/#:~:text=Then%2C%20click%20Restore%20to%20point,access%20the%20created%20database%20instance.
 
+   ```_Note_ We recommend backing up with a default nightly snapshot as a minimum```
+
 # Restoring an AI Vault DataBase
 These are the options available to you to restore  an RDS database from a Snapshot
 
