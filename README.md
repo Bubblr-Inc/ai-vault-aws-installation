@@ -30,7 +30,7 @@ To successfully run  an AI-Vault instance the following components are required 
 | DNS Entry | A DNS entry pointing to the loadbalancer enpoint  |
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
 | Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
-| PostGres DataBase | A postgres database for the AI Vault containers to store data |
+| PostGres DataBase | A postgres database for the AI Vault containers to store data |](https://github.com/Bubblr-Inc/ai-vault-aws-installation)
 
 [Costs Estimates can be found here:](doc/COST.md)
 
