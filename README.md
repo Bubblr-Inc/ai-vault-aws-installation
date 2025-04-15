@@ -43,7 +43,6 @@ If you have these already prepared you may skip to the _Installation of the Helm
 next section.
 
 ## Security Statement
-
 ### Resources
 - AI Helm chart doesn't require the usage of the AWS root account. All installation and running processes use IAM roles and policies as recommended by AWS best practices.
 - AI Helm chart is installed on AWS EKS. the AI workload need access to and RDS postgres database only.
