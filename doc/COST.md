@@ -1,6 +1,6 @@
 # Cost Estimation
 
-The following chart approximates the pricing per month for running an AI-Vault instance that can support 10-100 users running in the eu-west-1 (Ireland) region
+The following chart approximates the pricing per month for running an AI-Vault instance supporting 10-100 users running in the eu-west-1 (Ireland) region. This assumes you are using the recommended AWS components listed below:
 
 
 | Component       | Pricing |
