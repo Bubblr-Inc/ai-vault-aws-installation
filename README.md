@@ -8,7 +8,7 @@ The architecture of AI seek is a fairly simple one, consisting of an edge ingres
 ![Ai-Vault on EKS Architecture](doc/AI-Vault-Architecture-Diagram-v1.png?raw=true "Title")
 
 ### High Availablilty
-This solution uses VPC with multi A-Z setup on both the EKS comoute layer and the RDS postgres layer to provide a resiliant setup. 
+This solution uses VPC with multi A-Z setup on both the EKS compute layer and the RDS Postgres layer to provide a resiliant setup. 
 
 ### Supported AWS Regions
 us-east-1, us-east-2, us-west-1, us-west-2
