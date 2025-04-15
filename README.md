@@ -143,3 +143,7 @@ helm uninstall ai-vault-helm -n ai-vault-ns
 ## Backup And Restore
 Please see the following section on backup and restore for AI-Vault database.
 ![Backup and Restore](doc/BACKUPRESTORE.md)
+
+## Health Check
+For health checks see the following section.
+![Health Checks](doc/HEALTHCHECKS.md)
