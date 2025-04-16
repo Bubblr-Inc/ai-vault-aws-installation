@@ -11,9 +11,14 @@ The architecture of AI seek is a fairly simple one, consisting of an edge ingres
 This solution uses VPC with multi A-Z setup on both the EKS compute layer and the RDS Postgres layer to provide a resiliant setup. 
 
 ### Supported AWS Regions
-us-east-1, us-east-2, us-west-1, us-west-2
-ca-central-1, ca-west-1	
-eu-west-1, eu-west-2, eu-west-3, eu-central-1
+| NA       | EU |
+| --------------- | ------------- |
+| us-east-1 | eu-west-1
+|us-east-2|eu-west-2
+|us-west-1|eu-west-3
+|us-west-2|eu-central-1|
+|ca-central-1 ||
+|ca-west-1	 | |
 
 ## Requirements
 
