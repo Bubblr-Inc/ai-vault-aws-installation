@@ -4,9 +4,9 @@ provider "aws" {
 
 locals {
   name           = "MyAIVault"
-  aws_account_id = "1234567890"
-  vpc_cidr       = "172.22.0.0/16"
-  aws_region     = "eu-west-1"
+  aws_account_id = "1234567890" # Change to your AWS Account
+  vpc_cidr       = "172.22.0.0/16" # Optionally change this to a RFC1818 Cidr
+  aws_region     = "eu-west-1" # Change this to the AWS region you want run your AI-Vault in.
   vpc_id = data.terraform_remote_state.bootstrap.outputs.vpc_id
   tags = {
     Project    = local.name
