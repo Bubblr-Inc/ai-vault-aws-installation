@@ -2,6 +2,12 @@
 
 The following example will start with an empty AWS account and will build AI Vault installation.
 
+## Requirements
+- An AWS account
+- AWS cli installed on your laptop or workstatiopn
+- Terraform client installed on your laptop
+
+## The following operations will be performed
 1. Create a VPC and three sets of subnets public, private and database.
 2. Create a Route53 Zone.
 3. Create an RDS Aurora PostGres Cluster.
@@ -20,6 +26,8 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 _Note_ Please ensure you are not using the root AWS account for this operation.
 
 Once you are authenticated move on to the next step below.
+
+
 
 ## Clone this repo
 Clone this repository to your AWS authenticated workstation / laptop.
@@ -48,3 +56,6 @@ There are two mandatory options to change:
 
 1. The aws_account_id.  This is the unique account ID associated with your AWS.
 2. The aws_region. You should set this to match the region you wish to run in. For example, eu-west-1 (the default) with run in the EU Ireland region.
+
+## Run Terraform init
+
