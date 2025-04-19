@@ -22,7 +22,6 @@ module "bootstrap" {
   vpc_cidr = local.vpc_cidr
   azs = local.azs
   tags = local.tags
-  ssm_ami = local.ssm_ami
 }
 
 module "database" {
