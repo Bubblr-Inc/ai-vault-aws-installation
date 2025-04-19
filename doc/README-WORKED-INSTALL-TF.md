@@ -63,7 +63,16 @@ Create an S3 bucket to keep the state of your set up so you can run terraform co
 
 https://developer.hashicorp.com/terraform/language/backend/s3
 
-Add the state bucket declaration in the main.tf file
+Add the state bucket declaration in the main.tf file, something like the following:
+```
+terraform {
+  backend "s3" {
+    bucket = "myaivault.tfstate.bucket"
+    key    = terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
+```
 
 ## Run Terraform init
 Terraform init sets up the terrafrom environment within this directory and will download and required terraform providers.
