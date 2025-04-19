@@ -26,7 +26,7 @@ Clone this repository to your AWS authenticated workstation / laptop.
 [https://github.com/Bubblr-Inc/ai-vault-aws-installation](https://github.com/Bubblr-Inc/ai-vault-aws-installation)
 
 ## Edit terraform main.tf 
-main.tf is the terraform where you set the variables to specify the attributes for your particular environment. In this step we will modify the file to suit your environment.
+`main.tf` is the terraform where you set the variables to specify the attributes for your particular environment. In this step we will modify the file to suit your environment.
 
 Navigate to the repo and open it in your preferred code editor such as Visual Studio Code or Notepad++.
 
