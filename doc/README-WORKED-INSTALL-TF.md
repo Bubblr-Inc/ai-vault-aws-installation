@@ -27,7 +27,9 @@ _Note_ Please ensure you are not using the root AWS account for this operation.
 
 Once you are authenticated move on to the next step below.
 
-
+## Install the Terraform Binary
+Install the terraform binary.  Instructions on how to do this can be found here:
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 ## Clone this repo
 Clone this repository to your AWS authenticated workstation / laptop.
