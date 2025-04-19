@@ -30,5 +30,16 @@ Clone this repository to your AWS authenticated workstation / laptop.
 
 Navigate to the repo and open it in your preferred code editor such as Visual Studio Code or Notepad++.
 
-Within the terraform directory open the main.tf
-## 
+Within the terraform directory open the main.tf for editing.
+
+```
+locals {
+  aws_account_id = "1234567890" # Change to your AWS Account
+  name          = "MyAIVault" # Optionally change the name to something to suit you
+  vpc_cidr       = "172.22.0.0/16" # Optionally change this to a RFC1818 Cidr
+  aws_region     = "eu-west-1" # Change this to the AWS region you want run your AI-Vault in.
+  tags = {
+    Project    = local.name
+  }
+}
+```
