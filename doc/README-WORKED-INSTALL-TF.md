@@ -66,4 +66,13 @@ https://developer.hashicorp.com/terraform/language/backend/s3
 Add the state bucket declaration in the main.tf file
 
 ## Run Terraform init
+Terraform init sets up the terrafrom environment within this directory and will download and required terraform providers.
+From within the terraform directory type the following :
+```
+terrafrom init
+```
 
+## Run the Terraform plan command
+```
+terraform plan
+```
