@@ -2,17 +2,18 @@ provider "aws" {
   region = "eu-west-1" #Change this to your region
 }
 
+data "aws_availability_zones" "available" {}
+data "aws_caller_identity" "current" {}
+
 locals {
-  name           = "MyAIVault"
   aws_account_id = "1234567890" # Change to your AWS Account
+  name          = "MyAIVault" # Optionally change the name to something to suit you
   vpc_cidr       = "172.22.0.0/16" # Optionally change this to a RFC1818 Cidr
   aws_region     = "eu-west-1" # Change this to the AWS region you want run your AI-Vault in.
   vpc_id = data.terraform_remote_state.bootstrap.outputs.vpc_id
   tags = {
     Project    = local.name
   }
-  private_subnets = data.terraform_remote_state.bootstrap.outputs.private_subnets
-  public_subnets = data.terraform_remote_state.bootstrap.outputs.public_subnets
 }
 
 module "bootstrap" {
@@ -47,5 +48,5 @@ module "cluster" {
   public_subnets = module.bootstrap.outputs.public_subnets
   key_owners_arn = data.aws_caller_identity.current.arn
   aws_region = local.aws_region
-  random_string = data.terraform_remote_state.bootstrap.outputs.random_string
+  random_string = module.bootstrap.outputs.random_string
 }
