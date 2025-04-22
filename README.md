@@ -45,7 +45,7 @@ To successfully run  an AI-Vault instance the following components are required 
 [Costs Estimates can be found here:](doc/COST.md)
 
 ```
-_Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
+Note: You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
 and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
 ```
 #### Permissions requirements
@@ -56,8 +56,6 @@ and you may use your own managed Postgres or Kubernetes on raw EC2. However this
 |"iam:CreateInstanceProfile", "iam:DeleteInstanceProfile", "iam:GetInstanceProfile", "iam:RemoveRoleFromInstanceProfile","iam:GetRole", "iam:CreateRole", "iam:DeleteRole", "iam:AttachRolePolicy", "iam:PutRolePolicy", "iam:UpdateAssumeRolePolicy", "iam:AddRoleToInstanceProfile", "iam:ListInstanceProfilesForRole", "iam:PassRole", "iam:DetachRolePolicy", "iam:DeleteRolePolicy", "iam:GetRolePolicy", "iam:GetOpenIDConnectProvider", "iam:CreateOpenIDConnectProvider", "iam:DeleteOpenIDConnectProvider", "iam:TagOpenIDConnectProvider", "iam:ListAttachedRolePolicies", "iam:TagRole", "iam:UntagRole", "iam:GetPolicy", "iam:CreatePolicy", "iam:DeletePolicy", "iam:ListPolicyVersions"|Only if you need to build an EKS cluster|no|
 |AmazonEC2FullAccess|Only if you need to build a EKS, VPC and Subnets cluster|no|
 |rds:ModifyDBInstance,rds:CreateDBSnapshot,rds:CreateDBInstance,rds:Describe*|Only if you need to build an RDS cluster|no|
-
-
 
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
