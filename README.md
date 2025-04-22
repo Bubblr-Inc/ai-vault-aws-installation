@@ -27,6 +27,7 @@ To build the system with all of the components: vpc, eks, rds and the helm chart
 ## Requirements
 
 ### Skill Requirements
+To install the AI-Vault helm chart a user will need experience of managing helm and kubernetes deployments in a EKS environment. Some experience of AWS RDS is needed to ensure that snapshots and backups are running successfully.
 
 ### Infrastructure Requirements
 
@@ -47,6 +48,15 @@ To successfully run  an AI-Vault instance the following components are required 
 _Note_ You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
 and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
 ```
+#### Permissions requirements
+| Permission       | Description | Mandatory|
+|------------------|-------------|----------|
+|Access Entry to EKS|To install the AI-Vault helm chart a user needs cli access to the EKS cluster with the kubernetes kubectl tool.  This is most commonly done by adding an acces entry to your EKS cluster.|yes|
+|AmazonEC2FullAccess|Only if you need to build an EKS cluster|no|
+|AWSCloudFormationFullAccess|Only if you need to build an EKS cluster|no|
+
+
+
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
