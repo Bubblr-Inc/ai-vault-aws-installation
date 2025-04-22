@@ -51,9 +51,10 @@ and you may use your own managed Postgres or Kubernetes on raw EC2. However this
 #### Permissions requirements
 | Permission       | Description | Mandatory|
 |------------------|-------------|----------|
-|Access Entry to EKS|To install the AI-Vault helm chart a user needs cli access to the EKS cluster with the kubernetes kubectl tool.  This is most commonly done by adding an acces entry to your EKS cluster.|yes|
+|Access Entry to EKS|To install the AI-Vault helm chart a user needs cli access to the EKS cluster with the kubernetes kubectl tool.  This is most commonly done by adding an access entry to your EKS cluster.|yes|
 |AmazonEC2FullAccess|Only if you need to build an EKS cluster|no|
 |AWSCloudFormationFullAccess|Only if you need to build an EKS cluster|no|
+|rds:ModifyDBInstance,rds:CreateDBSnapshot,rds:CreateDBInstance,rds:Describe*|Only if you need to build an RDS cluster|no|
 
 
 
