@@ -20,6 +20,10 @@ This solution uses VPC with multi A-Z setup on both the EKS compute layer and th
 |ca-central-1 ||
 |ca-west-1	 | |
 
+## Time to Install
+This varies depending on your environment - for example if you have an existing EKS Kubernetes installation this will cut the time off by at least 40%.
+To build the system with all of the components: vpc, eks, rds and the helm chart install can take around 2-3 hrs.
+
 ## Requirements
 
 ### Skill Requirements
@@ -31,8 +35,8 @@ To successfully run  an AI-Vault instance the following components are required 
 | Component       | Description |
 | --------------- | ------------- |
 | ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
-| ACM TLS certifcate | A AWS ACM certificate use for providing the TLS encryption. |
-| DNS Entry | A DNS entry pointing to the loadbalancer enpoint  |
+| ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. |
+| DNS Entry | DNS entry pointing to the loadbalancer enpoint  |
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
 | Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |](https://github.com/Bubblr-Inc/ai-vault-aws-installation)
