@@ -4,7 +4,7 @@
 [Summary](#Summary)  
 [AI Vault Architecture](#AI Vault Architecture)  
 [Time to Install](#Time to Install)
-[Security Statement] <a name="SECURITYSTATEMENT" href="SECURITYSTATEMENT.md" />
+[Security Statement] (doc/SECURITYSTATEMENT.md)
 ## Headers
 
 ## Summary
