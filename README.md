@@ -11,7 +11,7 @@
 
 [Security Statement](doc/SECURITYSTATEMENT.md)
 
-[Prepare for your Installation](#Prepare%20for%20your%20installation.)
+[Prepare for your Installation](#Prepare%20for%20your%20installation)
 
 [Installing the Chart](#Installation)
 
@@ -81,7 +81,7 @@ The following lists the AWS accounts the user's credentials will need when runni
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
   
- ## Prepare for your installation.
+ ## Prepare for your installation
  If you already have the items listed in the requirements section such as AWS VPC, EKS cluster and an RDS database your simply need to make a note these and ensure you have kubernetes connection via kubectl and helm, a postgres database and a user that has sufficient access to create a database and supporting tables.
 
 If you do not have the infrastructure components listed in the requirements section you will need to create them in our AWS account.
