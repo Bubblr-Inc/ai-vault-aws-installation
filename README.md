@@ -55,9 +55,9 @@ To successfully run  an AI-Vault instance the following components are required 
 | Component       | Description                                                  | Info                            |
 | --------------- | ------------------------------------------------------------ |---------------------------------|
 | ALB Load balancer with TLS | The URL endpoint that users will access AI Vault. | Generated at Helm Chart Install|
-| ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. | Generate and make a note of the ACM ARN |
-| DNS Entry | DNS entry pointing to the loadbalancer enpoint  | Generate this after Helm Chart Install when you have the loadbalancer CNAME|
-| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | Make a note of the cluster name|
+| ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. | User to create or supply and make a note of the ACM ARN |
+| DNS Entry | DNS entry pointing to the loadbalancer enpoint  | User to generate this after Helm Chart Install when you have the loadbalancer DNS CNAME|
+| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | User to create or supply and make a note of the cluster name|
 | Node Pool |  A EKS node pool with at least one running instance of type t3large or above ||
 | PostGres DataBase | A postgres database for the AI Vault containers to store data | Make a note of the server URL|
 
@@ -68,6 +68,7 @@ Note: You may choose to use a classic load balancer, traefik or Nginx load balan
 and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
 ```
 #### Permissions requirements
+The following lists the AWS accounts the user's credentials will need when running the install.
 | Permission       | Description | Mandatory|
 |------------------|-------------|----------|
 |Access Entry to EKS|To install the AI-Vault helm chart a user needs cli access to the EKS cluster with the kubernetes kubectl tool.  This is most commonly done by adding an access entry to your EKS cluster. https://docs.aws.amazon.com/eks/latest/userguide/creating-access-entries.html|yes|
