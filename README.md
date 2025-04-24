@@ -4,7 +4,7 @@
 [Summary](#Summary)  
 [AI Vault Architecture](#Architecture)  
 [Time to Install](#Time)
-[Requirement](#Requirements)
+[Requirements](#Requirements)
 
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
