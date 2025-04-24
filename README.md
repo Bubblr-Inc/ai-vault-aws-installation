@@ -27,7 +27,7 @@ This solution uses VPC with multi A-Z setup on both the EKS compute layer and th
 |ca-central-1 ||
 |ca-west-1	 | |
 
-## Time to Install
+## Time
 This varies depending on your environment - for example if you have an existing EKS Kubernetes installation this will cut the time off by at least 40%.
 To build the system with all of the components: vpc, eks, rds and the helm chart install can take around 2-3 hrs.
 
