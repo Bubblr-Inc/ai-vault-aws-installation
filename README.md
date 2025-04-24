@@ -1,4 +1,12 @@
 # AI Vault Helm Chart.
+
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
+
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
 
