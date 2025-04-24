@@ -2,9 +2,9 @@
 
 ##### Table of Contents  
 [Summary](#Summary)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
+[AI Vault Architecture](#AI Vault Architecture)  
+[Time to Install](#Time to Install)
+[Security Statement] <a name="SECURITYSTATEMENT" href="SECURITYSTATEMENT.md" />
 ## Headers
 
 ## Summary
