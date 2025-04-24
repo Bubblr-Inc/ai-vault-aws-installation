@@ -1,7 +1,7 @@
 # AI Vault Helm Chart.
 
 ##### Table of Contents  
-[Headers](#headers)  
+[Summary](#Summary)  
 [Emphasis](#emphasis)  
 ...snip...    
 <a name="headers"/>
