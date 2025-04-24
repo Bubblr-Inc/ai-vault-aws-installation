@@ -54,12 +54,12 @@ To successfully run  an AI-Vault instance the following components are required 
 
 | Component       | Description |
 | --------------- | ------------- |
-| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     |Generated at Helm Chart Install|
+| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     | Generated at Helm Chart Install|
 | ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. | Generate and make a note of the ACM ARN |
-| DNS Entry | DNS entry pointing to the loadbalancer enpoint  |Generate this after Helm Chart Install when you have the loadbalancer CNAME|
-| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |Make a note of the cluster name|
-| Node Pool |  A EKS node pool with at least one running instance of type t3large or above |
-| PostGres DataBase | A postgres database for the AI Vault containers to store data |]Make a note of the server URL|
+| DNS Entry | DNS entry pointing to the loadbalancer enpoint  | Generate this after Helm Chart Install when you have the loadbalancer CNAME|
+| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | Make a note of the cluster name|
+| Node Pool |  A EKS node pool with at least one running instance of type t3large or above ||
+| PostGres DataBase | A postgres database for the AI Vault containers to store data | Make a note of the server URL|
 
 [Costs Estimates can be found here:](doc/COST.md)
 
