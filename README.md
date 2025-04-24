@@ -9,9 +9,9 @@
 
 [Requirements](#Requirements)
 
-[Security Statement:](doc/SECURITYSTATEMENT.md)
+[Security Statement](doc/SECURITYSTATEMENT.md)
 
-[Infrastructure Installation:](doc/README-WORKED-INSTALL-TF.md)
+[Infrastructure Installation](doc/README-WORKED-INSTALL-TF.md)
 
 
 ## Summary
