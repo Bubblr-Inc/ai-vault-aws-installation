@@ -38,6 +38,8 @@ This solution uses VPC with multi A-Z setup on both the EKS compute layer and th
 |ca-west-1	 | |
 
 ## Time
+30 Mins For the Chart Alone up to several hours if you need to install the supporting infrastructure.
+
 This varies depending on your environment - for example if you have an existing EKS Kubernetes installation this will cut the time off by at least 40%.
 To build the system with all of the components: vpc, eks, rds and the helm chart install can take around 2-3 hrs.
 
@@ -52,12 +54,12 @@ To successfully run  an AI-Vault instance the following components are required 
 
 | Component       | Description |
 | --------------- | ------------- |
-| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
-| ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. |
-| DNS Entry | DNS entry pointing to the loadbalancer enpoint  |
-| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
+| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     |Generated at Helm Chart Install|
+| ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. | Generate and make a note of the ACM ARN |
+| DNS Entry | DNS entry pointing to the loadbalancer enpoint  |Generate this after Helm Chart Install when you have the loadbalancer CNAME|
+| Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |Make a note of the cluster name|
 | Node Pool |  A EKS node pool with at least one running instance of type t3large or above |
-| PostGres DataBase | A postgres database for the AI Vault containers to store data |]
+| PostGres DataBase | A postgres database for the AI Vault containers to store data |]Make a note of the server URL|
 
 [Costs Estimates can be found here:](doc/COST.md)
 
@@ -78,8 +80,10 @@ and you may use your own managed Postgres or Kubernetes on raw EC2. However this
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
   
- ## Build or prepare the infrastructure.
+ ## Prepare for your installation.
+ If you already have the items listed in the requirements section such as AWS VPC, EKS cluster and an RDS database your simply need to make a note these and ensure you have kubernetes connection via kubectl and helm, a postgres database and a user that has sufficient access to create a database and supporting tables.
 
+If you do not have the listed 
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/README-WORKED-INSTALL-TF.md)
 
 ``` _Note_ This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
