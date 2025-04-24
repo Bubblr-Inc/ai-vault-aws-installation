@@ -56,8 +56,8 @@ To successfully run  an AI-Vault instance the following components are required 
 | ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. |
 | DNS Entry | DNS entry pointing to the loadbalancer enpoint  |
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers |
-| Node Pool |  A EKS node pool with at least on running instance of type of t3_large or above |
-| PostGres DataBase | A postgres database for the AI Vault containers to store data |](https://github.com/Bubblr-Inc/ai-vault-aws-installation)
+| Node Pool |  A EKS node pool with at least one running instance of type t3large or above |
+| PostGres DataBase | A postgres database for the AI Vault containers to store data |]
 
 [Costs Estimates can be found here:](doc/COST.md)
 
