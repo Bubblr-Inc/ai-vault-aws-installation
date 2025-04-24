@@ -153,7 +153,7 @@ ingress:
     alb.ingress.kubernetes.io/group.name: ai-vault
     alb.ingress.kubernetes.io/load-balancer-name: ai-vault
   hosts:
-    - host: ai-vault.prodsvc.com
+    - host:
       paths:
         - path: /
           pathType: Prefix
