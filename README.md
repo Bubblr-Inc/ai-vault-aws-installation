@@ -13,6 +13,8 @@
 
 [Infrastructure Installation](doc/README-WORKED-INSTALL-TF.md)
 
+[Installing the Chart](#Installation)
+
 
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
@@ -82,7 +84,7 @@ This can be done a number of ways however, we generally use terraform so to setu
 
 ``` _Note_ This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 
-## Installation of Helm Chart
+## Installation 
 
 1. Prepare a values file for your installation.
 Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
