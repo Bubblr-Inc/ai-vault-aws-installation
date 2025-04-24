@@ -1,8 +1,10 @@
 # AI Vault Helm Chart.
 
 ##### Table of Contents  
-[Summary](#Summary)  
-[AI Vault Architecture](#Architecture)  
+[Summary](#Summary)
+
+[AI Vault Architecture](#Architecture)
+
 [Time to Install](#Time)
 
 [Requirements](#Requirements)
