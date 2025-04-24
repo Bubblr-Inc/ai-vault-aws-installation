@@ -52,9 +52,9 @@ To install the AI-Vault helm chart a user will need experience of managing helm 
 
 To successfully run  an AI-Vault instance the following components are required and you should expect to run these components (or their alternative - see note ) at a minimum to successfully run and AI instalation.
 
-| Component       | Description |
-| --------------- | ------------- |
-| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault.     | Generated at Helm Chart Install|
+| Component       | Description                                                  | Info                            |
+| --------------- | ------------------------------------------------------------ |---------------------------------|
+| ALB Load balancer with TLS | The URL endpoint that users will access AI Vault. | Generated at Helm Chart Install|
 | ACM TLS certifcate | AWS ACM certificate use for providing the TLS encryption. | Generate and make a note of the ACM ARN |
 | DNS Entry | DNS entry pointing to the loadbalancer enpoint  | Generate this after Helm Chart Install when you have the loadbalancer CNAME|
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | Make a note of the cluster name|
