@@ -11,7 +11,7 @@
 
 [Security Statement](doc/SECURITYSTATEMENT.md)
 
-[Infrastructure Installation](doc/README-WORKED-INSTALL-TF.md)
+[Infrastructure Installation](doc/INSTALL.md)
 
 [Installing the Chart](#Installation)
 
