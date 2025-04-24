@@ -4,8 +4,7 @@
 [Summary](#Summary)  
 [AI Vault Architecture](#AI Vault Architecture)  
 [Time to Install](#Time to Install)
-[Security Statement] (doc/SECURITYSTATEMENT.md)
-## Headers
+[Security Statement](doc/SECURITYSTATEMENT.md)
 
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
