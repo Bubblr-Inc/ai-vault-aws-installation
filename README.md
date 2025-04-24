@@ -3,7 +3,7 @@
 ##### Table of Contents  
 [Summary](#Summary)  
 [AI Vault Architecture](#Architecture)  
-[Time to Install](#Time to Install)
+[Time to Install](#Time)
 [Requirement](#Requirements)
 
 ## Summary
