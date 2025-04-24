@@ -7,6 +7,11 @@
 
 [Requirements](#Requirements)
 
+[Security Statement:](doc/SECURITYSTATEMENT.md)
+
+[Infrastructure Installation:](doc/README-WORKED-INSTALL-TF.md)
+
+
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
 
