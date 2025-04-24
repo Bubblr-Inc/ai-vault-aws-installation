@@ -4,6 +4,7 @@
 [Summary](#Summary)  
 [AI Vault Architecture](#Architecture)  
 [Time to Install](#Time)
+
 [Requirements](#Requirements)
 
 ## Summary
