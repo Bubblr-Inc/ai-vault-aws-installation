@@ -1,13 +1,13 @@
 
 variable "vpc_id" {}
 
-variable "name" {}
+variable "name" {
+  default = "ai-vault"
+}
 
 variable "aws_account_id" {}
 
 variable "aws_region" {}
-
-variable "environment" {}
 
 variable "tags" {
   type        = map(string)
@@ -18,7 +18,7 @@ variable "private_subnets" {}
 
 variable "public_subnets" {}
 
-variable "key_owners_arn" {}
+variable "owners_arn" {}
 
 variable "random_string" {}
 
