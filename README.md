@@ -87,13 +87,16 @@ next section.
 If you do not have the infrastructure components listed in the requirements section you will need to create them in your AWS account.
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/INSTALL.md)
 
-``` _Note_ This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
+``` Note: This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 
 ## Installation 
 
 1. Prepare a values file for your installation.
-Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
-_NOTE_ You will likely need an ALB Load Balancer to expose your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
+Create a file named `customValues.yaml` containing the following values.
+```Note:
+- You will modify the environment variables to suit your specific environment.
+- You will likely need an ALB Load Balancer to expose your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
+```
 
 ```
 namespace: ai-vault-ns
