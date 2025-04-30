@@ -169,7 +169,7 @@ ingress:
 
 ### Uninstall Helm Chart
 ```
-helm uninstall ai-vault-helm -n ai-vault-ns
+helm uninstall ai-vault-helm-release -n ai-vault-ns
 ```
 ## Backup And Restore
 Please see the following section on backup and restore for AI-Vault database.
