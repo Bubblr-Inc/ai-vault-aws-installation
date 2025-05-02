@@ -143,6 +143,7 @@ This command will let you know the infrastructure you are about to build in your
 terraform plan
 ```
 ## Run the Terraform Apply command
+This will create the infrastructure.
 ```
 terraform apply
 ```
