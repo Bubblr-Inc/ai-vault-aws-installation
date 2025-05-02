@@ -56,13 +56,14 @@ locals {
 }
 ```
 
-There are two mandatory options to change:
 
-1. The aws_account_id.  This is the unique account ID associated with your AWS.
-2. The aws_region. You should set this to match the region you wish to run in. For example, eu-west-1 (the default) with run in the EU Ireland region.
 
+1. The aws_region. You should set this to match the region you wish to run in. For example, eu-west-1 (the default) with run in the EU Ireland region.
+2. vpc_cidr. You can choose any vpc cidr.
+   
 ## Setup a Terraform State Bucket (Optional but recommended)
 Create an S3 bucket to keep the state of your set up so you can run terraform commands from other workstations or CI/CD processes.
+something like ai-terraform-state.  
 
 https://developer.hashicorp.com/terraform/language/backend/s3
 
