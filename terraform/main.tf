@@ -47,3 +47,12 @@ module "cluster" {
   aws_region = local.aws_region
   random_string = module.bootstrap.random_string
 }
+
+
+#terraform {
+#  backend "s3" {
+#    bucket = "myaivault.tfstate.bucket"
+#    key    = "terraform.tfstate"
+#    region = "eu-west-1"
+#  }
+#}
