@@ -135,19 +135,31 @@ eksctl create iamserviceaccount \
 Authenticate your Helm client to the Amazon ECR registry holding the AI Vault Helm Chart.
 
 ```
+export HELM_EXPERIMENTAL_OCI=1
+
 aws ecr get-login-password \
-     --region eus-west-2 | helm registry login \
-     --username AWS \
-     --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
+    --region us-east-1 | helm registry login \
+    --username AWS \
+    --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
 ```
 
 ### Install the Helm Chart with your newly created values file.
 Install the chart to your kubernetes cluster. This example will install to the namespace ai-vault-ns
 ```
-helm install --create-namespace \
--n ai-vault-ns \
-ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm \
---version 0.1.0 --values ./customValues.yaml
+mkdir awsmp-chart && cd awsmp-chart
+
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-helm --version 0.2.1
+
+tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
+
+helm install ai-vault-helm-release \
+    --set gpcBaseUrl=<YOUR DNS NAME e.g aivault.yourdomain.tld > \
+    --set gptDataDbUser=<postgresuser> \
+    --set mailFrom=<YOUREMAIL> \
+    --set mailServerPort=<587> \
+    --set mailServer=<YOUR MAILSERVER> \
+    --set smtpLoginId=<YOUR MAIL SERVER LOGIN USER>
+    --namespace ai-vault-ns ./* 
 ```
 
 ## Adding a Load Balancer via Ingress
@@ -156,7 +168,7 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 1. Decide the hostname / url you wish to use to connect to your ai-vault instance. e.g ai-vault.mydomain.com
 2. Create or  an ACM TLS Certificate https://docs.aws.amazon.com/res/latest/ug/acm-certificate.html. _Note_ if you are using an existing ACM the skip to the next step.
 
-3. Make an a note of  the ACM certifcates' ARN
+3. Make an a note of the ACM certifcates' ARN
 
 4. Make a note of your public subnets ids.
 
