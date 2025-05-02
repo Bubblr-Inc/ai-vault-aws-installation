@@ -174,8 +174,9 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 3. Make an a note of the ACM certifcates' ARN
 
 4. Make a note of your public subnets ids. These can be found in the AWS console or via the AWS CLI command: aws ec2 describe-subnets --region eu-west-1
+5. Create a file called ingress.yaml
 
-5. Add an ingress section like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as your EKS cluster you are deploying the helm chart to.
+6. Add an ingress section to the ingress.yaml file like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as your EKS cluster you are deploying the helm chart to.
 
 ```
 ingress:
@@ -200,6 +201,17 @@ ingress:
               name: ai-vault-svc
               port:
                 number: 80
+```
+Retry the install command
+```
+helm update ai-vault-helm-release \
+    --set gpcBaseUrl=<YOUR DNS NAME e.g aivault.yourdomain.tld > \
+    --set gptDataDbUser=<postgresuser> \
+    --set mailFrom=<YOUREMAIL> \
+    --set mailServerPort=<587> \
+    --set mailServer=<YOUR MAILSERVER> \
+    --set smtpLoginId=<YOUR MAIL SERVER LOGIN USER>
+    --namespace ai-vault-ns ./* 
 ```
 
 ### Uninstall Helm Chart
