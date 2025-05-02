@@ -117,7 +117,7 @@ kubectl: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 Authenticate and register in kubeconfig file
 ```
-aws eks update-kubeconfig --region region-code --name my-cluster
+aws eks update-kubeconfig --region region-code --name <MY EKS CLUSTER NAME>
 ```
 
 ```
