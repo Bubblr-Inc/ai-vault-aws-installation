@@ -51,8 +51,7 @@ To complete a successful instalation. You will need to supply the following conf
 
 | Config        | Description                                                     | Notes                             |
 | --------------| ----------------------------------------------------------------|-----------------------------------|
-| User URL      | The URL that admins / user will use to connect to the AI Vault  | a URL for your users to access.
-For example if your companies domain is `myorg.tld` you could use a URL such as ai-vault.myorg.tld.  |
+| User URL      | The URL that admins / user will use to connect to the AI Vault  | a URL for your users to access. For example if your companies domain is `myorg.tld` you could use a URL such as ai-vault.myorg.tld.  |
 | DataBase Host | The Host dns name endpoints that points to a POSTGRES database. | something like mydatabase.server.vpc - this may not exist yet and you would build it in the Infrastrucutre requirements section|
 | DataBase User | A user on your database service instance e.g mypostgresuser ||
 | DataBase password | The corresponding password beloning to the Database Usesr||
