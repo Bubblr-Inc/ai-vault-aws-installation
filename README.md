@@ -98,7 +98,7 @@ This can be done a number of ways however, we generally use terraform so to setu
 At this stage we assume you have the following:
 1. Access to your AWS account via the account cli with permissions described here https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/doc/INSTALLPERMISSIONS.md
 2. Permssion to install tools su
-3. A running EKS Kubernetes Cluster
+3. A running EKS Kubernetes Cluster and you have a note of its name.
 4. A running RDS PostGres Database
 5. Login credentials to RDS postres
 6. Your URL such as ai-vault.myorg.tld
@@ -107,10 +107,16 @@ At this stage we assume you have the following:
 Following the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
 
 ### Install and Authenticate your kubectl amd eksctl tools
+Install:
 [eksctl:
 https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://eksctl.io/installation/&ved=2ahUKEwiFmurtgIWNAxXuVkEAHXIUM6UQFnoECAkQAQ&usg=AOvVaw1ZqjB_1BcjXV24hgBCOsBz
 
 kubectl: ](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+
+Authenticate and register in kubeconfig file
+```
+aws eks update-kubeconfig --region region-code --name my-cluster
+```
 
 ```
 kubectl create namespace ai-vault-ns
