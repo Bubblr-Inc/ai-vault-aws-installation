@@ -107,11 +107,10 @@ At this stage we assume you have the following:
 Following the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
 
 ### Install and Authenticate your kubectl amd eksctl tools
-Install:
-[eksctl:
-https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://eksctl.io/installation/&ved=2ahUKEwiFmurtgIWNAxXuVkEAHXIUM6UQFnoECAkQAQ&usg=AOvVaw1ZqjB_1BcjXV24hgBCOsBz
+Install
+eksctl: https://eksctl.io/installation
 
-kubectl: ](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+kubectl: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 Authenticate and register in kubeconfig file
 ```
