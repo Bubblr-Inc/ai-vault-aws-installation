@@ -72,6 +72,8 @@ To successfully run  an AI-Vault instance the following components are required 
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | User to create or supply and make a note of the cluster name|
 | Node Pool |  A EKS node pool with at least one running instance of type t3large or above ||
 | PostGres DataBase | A postgres database for the AI Vault containers to store data | Make a note of the server URL, you will need to supply this when installing the Helm chart|
+| An email address to send from | E.g supprt@myorg.com ||
+| A Login account to send e-mails from your email address||
 
 [Costs Estimates can be found here:](doc/COST.md)
 
