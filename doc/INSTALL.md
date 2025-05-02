@@ -80,6 +80,7 @@ terraform {
 
 ## Run Terraform init
 Terraform init sets up the terrafrom environment within this directory and will download and required terraform providers.
+
 From within the terraform directory type the following :
 ```
 terrafrom init
