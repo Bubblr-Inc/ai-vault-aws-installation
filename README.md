@@ -148,7 +148,7 @@ Install the chart to your kubernetes cluster. This example will install to the n
 ```
 mkdir awsmp-chart && cd awsmp-chart
 
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-helm --version 0.2.1
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-helm --version 0.2.4
 
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 
