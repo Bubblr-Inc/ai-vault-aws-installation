@@ -50,10 +50,13 @@ To build the system with all of the components: vpc, eks, rds and the helm chart
 To complete a successful instalation. You will need to supply a URL for your users to access.
 For example if your companies domain is `myorg.com` you could use a URL such as ai-vault.myorg.com.
 
-| Config        | Description                                                   |
-| --------------| --------------------------------------------------------------|
-| User URL      | The URL that admins / user will use to connect to the AI Vault|
-| DataBase URL  | The URL endpoints that points to a POSTGRES database.         |
+| Config        | Description                                                   | Notes                             |
+| --------------| --------------------------------------------------------------|-----------------------------------|
+| User URL      | The URL that admins / user will use to connect to the AI Vault| Example, ai-vault.mydomain.tld    |
+| DataBase Host | The Host dns name endpoints that points to a POSTGRES database.         | something like mydatabase.server.vpc - this may not exist yeet and you would build it in the Infrastrucutre requirements section|
+| DataBase User | A user on your database service instance e.g mypostgresuser ||
+| DataBase password | The corresponding password beloning to the Database Usesr||
+
 
 ### Skill Requirements
 To install the AI-Vault helm chart a user will need experience of managing helm and kubernetes deployments in a EKS environment. Some experience of AWS RDS is needed to ensure that snapshots and backups are running successfully.
