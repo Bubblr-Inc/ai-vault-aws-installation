@@ -37,7 +37,7 @@ https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 Clone this repository to your AWS authenticated workstation / laptop.
 [https://github.com/Bubblr-Inc/ai-vault-aws-installation](https://github.com/Bubblr-Inc/ai-vault-aws-installation)
 
-## Edit terraform main.tf 
+## Edit terraform main.tf (Optional or except the defaults)
 `main.tf` is the terraform where you set the variables to specify the attributes for your particular environment. In this step we will modify the file to suit your environment.
 
 Navigate to the repo and open it in your preferred code editor such as Visual Studio Code or Notepad++.
@@ -46,10 +46,10 @@ Within the terraform directory open the main.tf for editing.
 
 ```
 locals {
-  aws_account_id = "1234567890" # Change to your AWS Account
+  aws_account_id = data.aws_caller_identity.current.account_id 
   name          = "MyAIVault" # Optionally change the name to something to suit you
   vpc_cidr       = "172.22.0.0/16" # Optionally change this to a RFC1818 Cidr
-  aws_region     = "eu-west-1" # Change this to the AWS region you want run your AI-Vault in.
+  aws_region     = "eu-west-1" # Optionally Change this to the AWS region you want run your AI-Vault in.
   tags = {
     Project    = local.name
   }
