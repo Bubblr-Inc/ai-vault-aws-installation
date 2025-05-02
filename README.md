@@ -45,6 +45,16 @@ To build the system with all of the components: vpc, eks, rds and the helm chart
 
 ## Requirements
 
+### Config Requirements
+
+To complete a successful instalation. You will need to supply a URL for your users to access.
+For example if your companies domain is `myorg.com` you could use a URL such as ai-vault.myorg.com.
+
+| Config        | Description                                                   |
+| --------------| --------------------------------------------------------------|
+| User URL      | The URL that admins / user will use to connect to the AI Vault|
+| DataBase URL  | The URL endpoints that points to a POSTGRES database.         |
+
 ### Skill Requirements
 To install the AI-Vault helm chart a user will need experience of managing helm and kubernetes deployments in a EKS environment. Some experience of AWS RDS is needed to ensure that snapshots and backups are running successfully.
 
@@ -67,7 +77,8 @@ To successfully run  an AI-Vault instance the following components are required 
 Note: You may choose to use a classic load balancer, traefik or Nginx load balancer for the Ingress,
 and you may use your own managed Postgres or Kubernetes on raw EC2. However this is not covered in this guide. 
 ```
-#### Permissions requirements
+
+### Permissions requirements
 The following lists the AWS accounts the user's credentials will need when running the install.
 | Permission       | Description | Mandatory|
 |------------------|-------------|----------|
