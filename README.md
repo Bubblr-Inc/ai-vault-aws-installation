@@ -109,7 +109,7 @@ env:
   gpcBaseUrl: ""
   gptDataDbUser: ""
   gptDataDbHost: ""
-  gptDataDbName: ""
+  gptDataDbName: "aivault"
   mailFrom: " support@bubblr.com"
   mailServer: "smtp.office.365.com"
   mailServerPort: "587"
