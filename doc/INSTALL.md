@@ -138,6 +138,11 @@ Terraform has been successfully initialized!
 
 ```
 ## Run the Terraform plan command
+This command will let you know the infrastructure you are about to build in your AWS account.
 ```
 terraform plan
+```
+## Run the Terraform Apply command
+```
+terraform apply
 ```
