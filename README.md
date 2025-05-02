@@ -81,7 +81,7 @@ and you may use your own managed Postgres or Kubernetes on raw EC2. However this
 ```
 
 ### Permissions requirements
-[Costs Estimates can be found here:](doc/INSTALLPERMISSIONS.md)
+[Permission Requirements are found here:](doc/INSTALLPERMISSIONS.md)
 
 If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
