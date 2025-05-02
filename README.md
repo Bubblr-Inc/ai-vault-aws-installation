@@ -71,7 +71,7 @@ To successfully run  an AI-Vault instance the following components are required 
 | DNS Entry | DNS entry pointing to the loadbalancer enpoint  | User to decide the url and then generate this after Helm Chart install at this time, post install, the chart should output the loadbalancer DNS CNAME. Something like ai-vault.userdomain.com as decided by the user|
 | Kubernetes Cluster | Kubernetes cluster that will will run the AI Vault containers | User to create or supply and make a note of the cluster name|
 | Node Pool |  A EKS node pool with at least one running instance of type t3large or above ||
-| PostGres DataBase | A postgres database for the AI Vault containers to store data | Make a note of the server URL|
+| PostGres DataBase | A postgres database for the AI Vault containers to store data | Make a note of the server URL, you will need to supply this when installing the Helm chart|
 
 [Costs Estimates can be found here:](doc/COST.md)
 
