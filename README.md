@@ -143,7 +143,7 @@ aws ecr get-login-password \
     --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
 ```
 
-### Install the Helm Chart with your newly created values file.
+### Install the Helm Chart and supply your  values.
 Install the chart to your kubernetes cluster. This example will install to the namespace ai-vault-ns
 ```
 mkdir awsmp-chart && cd awsmp-chart
