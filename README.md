@@ -95,25 +95,35 @@ This can be done a number of ways however, we generally use terraform so to setu
 ``` Note: This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 
 ## Installation 
+At this stage we assume you have the following:
+1. Access to your AWS account via the account cli with permissions described here https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/doc/INSTALLPERMISSIONS.md
+2. Permssion to install tools su
+3. A running EKS Kubernetes Cluster
+4. A running RDS PostGres Database
+5. Login credentials to RDS postres
+6. Your URL such as ai-vault.myorg.tld
 
-1. Prepare a values file for your installation.
-Create a file named `customValues.yaml` containing the following values.
-```Note:
-- You will modify the environment variables to suit your specific environment.
-- You will likely need an ALB Load Balancer to expose your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
-```
+### Authenticate your command line 
+Following the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
+
+### Install and Authenticate your kubectl amd eksctl tools
+[eksctl:
+https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://eksctl.io/installation/&ved=2ahUKEwiFmurtgIWNAxXuVkEAHXIUM6UQFnoECAkQAQ&usg=AOvVaw1ZqjB_1BcjXV24hgBCOsBz
+
+kubectl: ](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
 ```
-namespace: ai-vault-ns
-env:
-  gpcBaseUrl: ""
-  gptDataDbUser: ""
-  gptDataDbHost: ""
-  gptDataDbName: "aivault"
-  mailFrom: " support@bubblr.com"
-  mailServer: "smtp.office.365.com"
-  mailServerPort: "587"
-  smtpLoginId: "support@bubblr.com"
+kubectl create namespace ai-vault-ns
+            
+eksctl create iamserviceaccount \
+    --name ai-vault-sa \
+    --namespace ai-vault-ns \
+    --cluster <ENTER_YOUR_CLUSTER_NAME_HERE> \
+    --attach-policy-arn arn:aws:iam::aws:policy/AWSMarketplaceMeteringFullAccess \
+    --attach-policy-arn arn:aws:iam::aws:policy/AWSMarketplaceMeteringRegisterUsage \
+    --attach-policy-arn arn:aws:iam::aws:policy/service-role/AWSLicenseManagerConsumptionPolicy \
+    --approve \
+    --override-existing-serviceaccounts
 ```
 
 ### Authenticate to AWS ECR
