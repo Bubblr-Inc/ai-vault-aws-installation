@@ -102,8 +102,9 @@ At this stage we assume you have the following:
 2. Permssion to install tools su
 3. A running EKS Kubernetes Cluster and you have a note of its name.
 4. A running RDS PostGres Database
-5. Login credentials to RDS postres
+5. Login credentials to RDS postgres
 6. Your URL such as ai-vault.myorg.tld
+7. E-mail address and Login Credentials for you e-mail
 
 ### Authenticate your command line 
 Following the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
