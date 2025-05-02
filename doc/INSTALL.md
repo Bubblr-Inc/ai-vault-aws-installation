@@ -83,7 +83,7 @@ Terraform init sets up the terrafrom environment within this directory and will 
 
 From within the terraform directory type the following :
 ```
-terrafrom init
+terraform init
 ```
 which should provide the following output
 ```
