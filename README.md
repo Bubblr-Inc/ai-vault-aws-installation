@@ -151,18 +151,30 @@ Install the chart to your kubernetes cluster. This example will install to the n
 ```
 mkdir awsmp-chart && cd awsmp-chart
 
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-helm --version 0.2.4
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-helm --version 0.2.5
 
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
+```
+Edit the charts values file, please mdofiy the the following values : gpcBaseUrl, gptDataDbUser, gptDataDbHost
+edit the env section
+```
+  gpcBaseUrl: "aivault.ai-vault.io"  #Change this to your own value
+  gptDataDbUser: "postgresadmin"     #Change this to the database user
+  gptDataDbHost: "my-ai-vault-one.cru8eiqq2zge.eu-west-1.rds.amazonaws.com" #change this to the postgres writer name
+  gptDataDbName: "ai_vault"
+  nlpApiUrl: "http://ai-vault-entity-svc/entities"
+  mailFrom: "support@bubblr.com"
+  mailServer: "smtp.office.365.com"
+  mailServerPort: "587"
+  smtpLoginId: "support@bubblr.com"
+  aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
+```
 
-helm install ai-vault-helm-release \
-    --set gpcBaseUrl=<YOUR DNS NAME e.g aivault.yourdomain.tld > \
-    --set gptDataDbUser=<postgresuser> \
-    --set mailFrom=<YOUREMAIL> \
-    --set mailServerPort=<587> \
-    --set mailServer=<YOUR MAILSERVER> \
-    --set smtpLoginId=<YOUR MAIL SERVER LOGIN USER>
-    --namespace ai-vault-ns ./* 
+Add the sensitive values via kubernetes secrets
+
+
+```
+helm install ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
 
 ## Adding a Load Balancer via Ingress
@@ -204,14 +216,7 @@ ingress:
 ```
 Retry the install command
 ```
-helm update ai-vault-helm-release \
-    --set gpcBaseUrl=<YOUR DNS NAME e.g aivault.yourdomain.tld > \
-    --set gptDataDbUser=<postgresuser> \
-    --set mailFrom=<YOUREMAIL> \
-    --set mailServerPort=<587> \
-    --set mailServer=<YOUR MAILSERVER> \
-    --set smtpLoginId=<YOUR MAIL SERVER LOGIN USER>
-    --namespace ai-vault-ns ./* 
+helm update ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
 
 ### Uninstall Helm Chart
