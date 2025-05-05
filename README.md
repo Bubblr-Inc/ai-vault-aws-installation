@@ -158,9 +158,9 @@ tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 Edit the charts values file, please mdofiy the the following values : gpcBaseUrl, gptDataDbUser, gptDataDbHost
 edit the env section
 ```
-  gpcBaseUrl: "aivault.ai-vault.io"  #Change this to your own value
-  gptDataDbUser: "postgresadmin"     #Change this to the database user
-  gptDataDbHost: "my-ai-vault-one.cru8eiqq2zge.eu-west-1.rds.amazonaws.com" #change this to the postgres writer name
+  gpcBaseUrl: "aivault.myorg.tld"  #Change this to your own value
+  gptDataDbUser: "yourdbuser"     #Change this to the database user
+  gptDataDbHost: "yourdbhost" #change this to the postgres writer name
   gptDataDbName: "ai_vault"
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
   mailFrom: "support@bubblr.com"
@@ -171,8 +171,19 @@ edit the env section
 ```
 
 Add the sensitive values via kubernetes secrets
+```
+kubectl create secret generic gpt-data-db \
+  --from-literal=password='<ENTER PASSWORD HERE>'
+  
+ kubectl create secret generic encryption-key\
+   --from-literal=key=<ENTER ENCRYPTION KEY HERE>
+   
+ kubectl create secret generic support-smtp-login \
+     --from-literal=id=<ENTER USER_ID> \
+     --from-literal=password='<ENTER PASSWORD>'
+```
 
-
+Now install the chart
 ```
 helm install ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
