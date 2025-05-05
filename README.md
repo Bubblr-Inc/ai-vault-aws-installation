@@ -170,14 +170,19 @@ edit the env section
   aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
 ```
 
-Add the sensitive values via kubernetes secrets
+Add the sensitive values via kubernetes secrets:
+The first one is the password for your database:
 ```
 kubectl create secret generic gpt-data-db \
   --from-literal=password='<ENTER PASSWORD HERE>'
-  
+```
+The second is the encryption key for your database.  This should be an alpha-numeric string of at least 16 characters.
+```
  kubectl create secret generic encryption-key\
    --from-literal=key=<ENTER ENCRYPTION KEY HERE>
-   
+```
+And finally your e-mail address password.
+```   
  kubectl create secret generic support-smtp-login \
      --from-literal=id=<ENTER USER_ID> \
      --from-literal=password='<ENTER PASSWORD>'
