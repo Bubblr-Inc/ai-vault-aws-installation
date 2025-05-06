@@ -15,8 +15,6 @@ The following example will start with an empty AWS account and will build AI Vau
 3. Create an RDS Aurora PostGres Cluster.
 4. Create an ACM certificate.
 5. Create an EKS Cluster.
-6. Install the Ai-Vault Helm chart.
-
 
 ## Install and authenticate the AWS cli
 We need the AWS cli tool to authenticate terraform so this needs to be installed on the laptop or workstation on your machine.
@@ -147,3 +145,6 @@ This will create the infrastructure.
 ```
 terraform apply
 ```
+## Finishing up - note any outputs
+At the end of the terraform run if all has gone well you should now have the compoonents required to host AI-Vault.
+
