@@ -91,7 +91,7 @@ If you have all of the infrastrucuture requirements already prepared you may ski
  If you already have the items listed in the requirements section such as AWS VPC, EKS cluster and an RDS database your simply need to make a note these and ensure you have kubernetes connection via kubectl and helm, a postgres database and a database user that has sufficient access to create a schemas and supporting tables.
 
 If you do not have the infrastructure components listed in the requirements section you will need to create them in your AWS account.
-This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/INSTALL.md)
+This can be done a number of ways however, we generally use terraform to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/INSTALL.md)
 
 ``` Note: This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 
