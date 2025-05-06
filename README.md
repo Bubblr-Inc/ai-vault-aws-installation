@@ -157,7 +157,7 @@ helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-v
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 ```
 Edit the chart's built in values.yaml file, please modfiy the the following values : gpcBaseUrl, gptDataDbUser, gptDataDbHost
-These are found in the env section. (Note - you can create newvalues file called myValues.yaml or similar to over ride the built in values file.  You will need to remember to supply this at the command line when you install the chart using the helm --values flag.
+These are found in the env section. (Note - you can create a new values file called myValues.yaml or similar to over-ride the built in values file.  You will need to remember to supply this at the command line when you install the chart using the helm --values flag.
 
 ```
   gpcBaseUrl: "aivault.myorg.tld"  #Change this to your own value
