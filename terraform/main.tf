@@ -48,6 +48,26 @@ module "cluster" {
   random_string = module.bootstrap.random_string
 }
 
+output "public_subnets" {
+  value = "${module.bootstrap.public_subnets}"
+}
+
+output "cluster_name" {
+  value = module.cluster.cluster_name
+}
+
+output "database_cluster_endpoint" {
+  value = "${module.database.cluster_endpoint}"
+}
+
+output "cluster_master_username" {
+  value = "${module.database.cluster_master_username}"
+}
+
+output "cluster_master_password" {
+  value = "${module.database.cluster_master_password}"
+}
+
 
 #terraform {
 #  backend "s3" {

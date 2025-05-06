@@ -39,3 +39,15 @@ resource "aws_db_subnet_group" "default" {
     Name = "${var.name} DB subnet group"
   }
 }
+
+output "eks_cluster_endpoint" {
+  value = "${module.cluster.cluster_endpoint}"
+}
+
+output "cluster_master_username" {
+  value = "${module.cluster.cluster_master_username}"
+}
+
+output "cluster_master_password" {
+  value = "${module.cluster.cluster_master_password}"
+}
