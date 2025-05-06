@@ -102,9 +102,10 @@ At this stage we assume you have the following:
 3. A running EKS Kubernetes Cluster and you have a note of its name. This maybe the one you have already or one you built in the the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "eks_cluster_name".
    
 5. A running PostGres Database.  Like the EKS cluster, this can be an existing one, or one you create in the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "database_cluster_endpoint".
-6. A Database user and postgres.  This needs to be powerful enough to create schemas and tables.  
-7. Your URL such as ai-vault.myorg.tld
-8. E-mail address and Login Credentials for your e-mail
+6. A Database user and postgres.  This needs to be powerful enough to create schemas and tables.
+7. The Ids of your Public subnets. These can be existing ones or the ones create in the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "public_subnets".
+8. Your URL such as ai-vault.myorg.tld
+9. E-mail address and Login Credentials for your e-mail
 
 ### Authenticate your command line 
 Follow the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
