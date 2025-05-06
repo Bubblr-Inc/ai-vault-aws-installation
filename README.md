@@ -85,11 +85,10 @@ and you may use your own managed Postgres or Kubernetes on raw EC2. However this
 ### Permissions requirements
 [Permission Requirements are found here:](doc/INSTALLPERMISSIONS.md)
 
-If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
-next section.
+If you have all of the infrastrucuture requirements already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the next section.
   
  ## Prepare for your installation
- If you already have the items listed in the requirements section such as AWS VPC, EKS cluster and an RDS database your simply need to make a note these and ensure you have kubernetes connection via kubectl and helm, a postgres database and a user that has sufficient access to create a database and supporting tables.
+ If you already have the items listed in the requirements section such as AWS VPC, EKS cluster and an RDS database your simply need to make a note these and ensure you have kubernetes connection via kubectl and helm, a postgres database and a database user that has sufficient access to create a schemas and supporting tables.
 
 If you do not have the infrastructure components listed in the requirements section you will need to create them in your AWS account.
 This can be done a number of ways however, we generally use terraform so to setup the infrastructure required by AI-Vault please use [this guide that describes how to do this](doc/INSTALL.md)
@@ -100,17 +99,18 @@ This can be done a number of ways however, we generally use terraform so to setu
 At this stage we assume you have the following:
 1. Access to your AWS account via the account cli with permissions described here https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/doc/INSTALLPERMISSIONS.md
 2. Permssion to install tools su
-3. A running EKS Kubernetes Cluster and you have a note of its name.
-4. A running RDS PostGres Database
-5. Login credentials to RDS postgres
-6. Your URL such as ai-vault.myorg.tld
-7. E-mail address and Login Credentials for you e-mail
+3. A running EKS Kubernetes Cluster and you have a note of its name. This maybe the one you have already or one you built in the the "Preparing for intallation" step.
+   
+5. A running PostGres Database.  Like the EKS cluster, this can be an existing one, or one you create in the "Preparing for intallation" step.
+6. A Database user and postgres.  This needs to be powerful enough to create schemas and tables.  
+7. Your URL such as ai-vault.myorg.tld
+8. E-mail address and Login Credentials for your e-mail
 
 ### Authenticate your command line 
-Following the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
+Follow the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
 
 ### Install and Authenticate your kubectl amd eksctl tools
-Install
+Installation Instructions:
 eksctl: https://eksctl.io/installation
 
 kubectl: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
@@ -160,7 +160,7 @@ These are found in the env section. (Note - you can create newvalues file called
 
 ```
   gpcBaseUrl: "aivault.myorg.tld"  #Change this to your own value
-  gptDataDbUser: "yourdbuser"     #Change this to the database user
+  gptDataDbUser: "yourdbuser"     #Change this to the database user from the Running database
   gptDataDbHost: "yourdbhost" #change this to the postgres writer name
   gptDataDbName: "ai_vault"
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
@@ -202,10 +202,11 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 
 3. Make an a note of the ACM certifcates' ARN
 
-4. Make a note of your public subnets ids. These can be found in the AWS console or via the AWS CLI command: aws ec2 describe-subnets --region eu-west-1
-5. Create a file called ingress.yaml
+4. Make a note of your public subnets ids. These can be found in the AWS console or via the AWS CLI command:
+   ```aws ec2 describe-subnets --region <your region>```
+6. Create a file called ingress.yaml
 
-6. Add an ingress section to the ingress.yaml file like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as your EKS cluster you are deploying the helm chart to.
+7. Add an ingress section to the ingress.yaml file like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as the EKS cluster you are deploying the helm chart to.
 
 ```
 ingress:
@@ -231,7 +232,7 @@ ingress:
               port:
                 number: 80
 ```
-Retry the install command
+Retry the install command, note this time it says update, rather than install.
 ```
 helm update ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
