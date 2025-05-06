@@ -52,7 +52,7 @@ output "public_subnets" {
   value = "${module.bootstrap.public_subnets}"
 }
 
-output "cluster_name" {
+output "eks_cluster_name" {
   value = module.cluster.cluster_name
 }
 
