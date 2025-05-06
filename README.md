@@ -177,7 +177,7 @@ The first one is the password for your database:
 kubectl create secret generic gpt-data-db \
   --from-literal=password='<ENTER PASSWORD HERE>'
 ```
-The second is the encryption key for your database.  This should be an alpha-numeric string of at least 16 characters.
+The second is the encryption key for your database.  This should be an random string of at least 16 characters. Hint: this command will create a random string for you: `openssl rand -base64 32`
 ```
  kubectl create secret generic encryption-key\
    --from-literal=key=<ENTER ENCRYPTION KEY HERE>
