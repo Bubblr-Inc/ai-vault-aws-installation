@@ -144,11 +144,12 @@ This will create the infrastructure.
 terraform apply
 ```
 ## Finishing up - note any outputs
-At the end of the terraform run if all has gone well you should now have the compoonents required to host AI-Vault.
+At the end of the terraform run, if all has gone well you should now have the components required to host AI-Vault.  Terraform should also print some outputs which you will have to supply when setting up your helm chart.
+
 
 ```
   cluster_master_username   = "postgresadmin"
-  cluster_name              = "my-ai-vault"
+  eks_cluster_name              = "my-ai-vault"
   database_cluster_endpoint = "my-ai-vault.cluster-234fhtura.eu-west-1.rds.amazonaws.com"
   public_subnets            = [
       + (known after apply),
