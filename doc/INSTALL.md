@@ -54,8 +54,6 @@ locals {
 }
 ```
 
-
-
 1. The aws_region. You should set this to match the region you wish to run in. For example, eu-west-1 (the default) with run in the EU Ireland region.
 2. vpc_cidr. You can choose any vpc cidr.
    
@@ -147,4 +145,15 @@ terraform apply
 ```
 ## Finishing up - note any outputs
 At the end of the terraform run if all has gone well you should now have the compoonents required to host AI-Vault.
+
+```
+  cluster_master_username   = "postgresadmin"
+  cluster_name              = "my-ai-vault"
+  database_cluster_endpoint = "my-ai-vault.cluster-234fhtura.eu-west-1.rds.amazonaws.com"
+  public_subnets            = [
+      + (known after apply),
+      + (known after apply),
+      + (known after apply),
+    ]
+```
 
