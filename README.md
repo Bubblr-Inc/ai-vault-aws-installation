@@ -99,9 +99,9 @@ This can be done a number of ways however, we generally use terraform to setup t
 At this stage we assume you have the following:
 1. Access to your AWS account via the account cli with permissions described here https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/doc/INSTALLPERMISSIONS.md
 2. Permssion to install tools su
-3. A running EKS Kubernetes Cluster and you have a note of its name. This maybe the one you have already or one you built in the the "Preparing for intallation" step.
+3. A running EKS Kubernetes Cluster and you have a note of its name. This maybe the one you have already or one you built in the the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "eks_cluster_name".
    
-5. A running PostGres Database.  Like the EKS cluster, this can be an existing one, or one you create in the "Preparing for intallation" step.
+5. A running PostGres Database.  Like the EKS cluster, this can be an existing one, or one you create in the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "database_cluster_endpoint".
 6. A Database user and postgres.  This needs to be powerful enough to create schemas and tables.  
 7. Your URL such as ai-vault.myorg.tld
 8. E-mail address and Login Credentials for your e-mail
