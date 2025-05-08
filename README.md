@@ -121,6 +121,33 @@ Authenticate and register in kubeconfig file
 ```
 aws eks update-kubeconfig --region region-code --name <MY EKS CLUSTER NAME>
 ```
+
+### Create a IAM policy for license management 
+Clone this repository 
+```
+git clone git@github.com:Bubblr-Inc/ai-vault-aws-installation.git
+```
+change to this repo directory
+```
+cd ai-vault-installation
+```
+create a new license policy
+```
+aws iam create-policy \
+    --policy-name ai-vault-license-policy \
+    --policy-document file://license-iam-policy.json
+```
+
+make a note of the ARN
+```
+{
+    "Policy": {
+        "PolicyName": "ai-vault-license-policy",
+        "Arn": "arn:aws:iam::0123456789012:policy/ai-vault-license-policy",
+    }
+}
+```
+
 ### Create an ai-vault namespace and add an ai-vault-sa service account
 ```
 kubectl create namespace ai-vault-ns
@@ -132,6 +159,7 @@ eksctl create iamserviceaccount \
     --attach-policy-arn arn:aws:iam::aws:policy/AWSMarketplaceMeteringFullAccess \
     --attach-policy-arn arn:aws:iam::aws:policy/AWSMarketplaceMeteringRegisterUsage \
     --attach-policy-arn arn:aws:iam::aws:policy/service-role/AWSLicenseManagerConsumptionPolicy \
+    --attach-policy-arn arn:aws:iam::<YOU AWS ACCOUNT ID>:policy/ai-vault-license-policy \   << REPLACE THIS WITH THE ARN CREATED IN THE PREVIOUS POLICY
     --approve \
     --override-existing-serviceaccounts
 ```
