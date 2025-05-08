@@ -107,8 +107,9 @@ At this stage we assume you have the following:
 8. Your URL such as ai-vault.myorg.tld
 9. E-mail address and Login Credentials for your e-mail
 
-### Authenticate your command line 
-Follow the instructions here https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html
+### Install and Authenticate the AWS CLI.
+Follow the instructions here 
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ### Install and Authenticate your kubectl amd eksctl tools
 Installation Instructions:
