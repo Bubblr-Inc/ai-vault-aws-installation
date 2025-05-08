@@ -95,10 +95,14 @@ This can be done a number of ways however, we generally use terraform to setup t
 
 ``` Note: This process generally takes around 1 hr to complete, although DNS propagation may take longer. ```
 
+### Install and Authenticate the AWS CLI.
+Follow the instructions here 
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+
 ## Installation 
 At this stage we assume you have the following:
 1. Access to your AWS account via the account cli with permissions described here https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/doc/INSTALLPERMISSIONS.md
-2. Permssion to install tools su
+2. Permssion to install tools.
 3. A running EKS Kubernetes Cluster and you have a note of its name. This maybe the one you have already or one you built in the the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "eks_cluster_name".
    
 5. A running PostGres Database.  Like the EKS cluster, this can be an existing one, or one you create in the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "database_cluster_endpoint".
@@ -106,10 +110,6 @@ At this stage we assume you have the following:
 7. The Ids of your Public subnets. These can be existing ones or the ones create in the "Preparing for intallation" step. See the outputs at the end of the the Preparing for the installation steps "public_subnets".
 8. Your URL such as ai-vault.myorg.tld
 9. E-mail address and Login Credentials for your e-mail
-
-### Install and Authenticate the AWS CLI.
-Follow the instructions here 
-https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ### Install and Authenticate your kubectl amd eksctl tools
 Installation Instructions:
