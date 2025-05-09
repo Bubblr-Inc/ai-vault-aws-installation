@@ -49,7 +49,7 @@ To build the system with all of the components: vpc, eks, rds and the helm chart
 
 ### Config Requirements
 
-To complete a successful instalation. You will need to supply the following configuration information.
+To complete a successful instalation. You will need to supply the following configuration information:
 
 | Config        | Description                                                     | Notes                             |
 | --------------| ----------------------------------------------------------------|-----------------------------------|
@@ -58,6 +58,7 @@ To complete a successful instalation. You will need to supply the following conf
 | Database user | A user on your database service instance e.g mypostgresuser ||
 | Database password | The corresponding password belonging to the Database user||
 
+you will also need to supply an AWS region eg: eu-west-1
 
 ### Skill Requirements
 To install the AI-Vault helm chart a user will need experience of managing helm and kubernetes deployments in a EKS environment. Some experience of AWS RDS is needed to ensure that snapshots and backups are running successfully.
@@ -121,7 +122,7 @@ kubectl: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 Authenticate and register in kubeconfig file
 ```
-aws eks update-kubeconfig --region region-code --name <MY EKS CLUSTER NAME>
+aws eks update-kubeconfig --region <YOU REGION CODE > --name <MY EKS CLUSTER NAME>
 ```
 
 ### Create a IAM policy for license management 
@@ -152,9 +153,12 @@ make a note of the ARN
 ```
 
 ### Create an ai-vault namespace and add an ai-vault-sa service account
+Here you are going to create the ai-vault namespace
 ```
 kubectl create namespace ai-vault-ns
-            
+```
+Now the service account, you wull need to update the line that says  << REPLACE THIS WITH THE ARN CREATED IN THE PREVIOUS POLICY  with the ARN from the previous output.
+```
 eksctl create iamserviceaccount \
     --name ai-vault-sa \
     --namespace ai-vault-ns \
