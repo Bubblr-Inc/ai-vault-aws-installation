@@ -15,6 +15,8 @@
 
 [Installing the Chart](#Installation)
 
+[Initialising your installtion](#Initialising)
+
 
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
@@ -281,14 +283,13 @@ For health checks see the following section.
 ![Health Checks](doc/HEALTHCHECKS.md)
 
 ## Initialising your installation
-During install you will recieve a link to your new login page.  
-You will log in using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email aiwth a claim link. Simply click that link and you will be logged in. 
+During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
 
 
-Before running any prompts you will need to get and enter an access key in order that AI Seek knows you are a valid user. Either email direct to support@ethicalweb.ai and request a key or use the contact form which is available from the app console once you are logged in. 
+Before running any prompts you will need to get and enter an access key in order to validate your instance with the AI Seek Enterprise Engine. You can obtain a key by either sending an email direct to support@ethicalweb.ai and requesting a key or by using the contact form which is available from the app console once you are logged in. 
 
 
 Enter the Access Key by selecting Account>Settings>Enter Access Key
-
+![Initialising your installation](doc/INITIALISING.md)
 
 
