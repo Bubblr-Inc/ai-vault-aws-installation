@@ -142,7 +142,7 @@ aws iam create-policy \
     --policy-document file://license-iam-policy.json
 ```
 
-make a note of the ARN
+this should output something like this (below), make a note of the Arn value
 ```
 {
     "Policy": {
