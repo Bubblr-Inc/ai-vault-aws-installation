@@ -15,7 +15,7 @@
 
 [Installing the Chart](#Installation)
 
-[Initialising your installtion](#Initialising)
+[Initialising your installation](#Initialising)
 
 
 ## Summary
@@ -290,6 +290,6 @@ Before running any prompts you will need to get and enter an access key in order
 
 
 Enter the Access Key by selecting Account>Settings>Enter Access Key
-![Initialising your installation](doc/INITIALISING.md)
+
 
 
