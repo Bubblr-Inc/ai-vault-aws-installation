@@ -157,7 +157,7 @@ Here you are going to create the ai-vault namespace
 ```
 kubectl create namespace ai-vault-ns
 ```
-Now the service account, you wull need to update the line that says  << REPLACE THIS WITH THE ARN CREATED IN THE PREVIOUS POLICY  with the ARN from the previous output.
+Now the service account, you will need to update the line that says and << REPLACE THIS WITH THE ARN CREATED IN THE PREVIOUS POLICY  with the ARN from the previous output. And update the --cluster < ENTER_YOUR_CLUSTER_NAME_HERE > With your cluster name e.g my-ai-vault
 ```
 eksctl create iamserviceaccount \
     --name ai-vault-sa \
