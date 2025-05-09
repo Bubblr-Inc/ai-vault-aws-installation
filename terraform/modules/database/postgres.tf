@@ -40,9 +40,9 @@ resource "aws_db_subnet_group" "default" {
   }
 }
 
-output "eks_cluster_endpoint" {
-  value = "${module.cluster.cluster_endpoint}"
-}
+#output "eks_cluster_endpoint" {
+#  value = "${module.cluster.cluster_endpoint}"
+#}
 
 output "cluster_master_username" {
   value = "${module.cluster.cluster_master_username}"

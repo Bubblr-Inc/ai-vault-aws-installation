@@ -7,7 +7,7 @@ data "aws_caller_identity" "current" {}
 
 locals {
   aws_account_id = data.aws_caller_identity.current.account_id 
-  name          = "my-ai-vault" # Optionally change the name to something to suit you (lower case and hyphens only_)
+  name          = "test-ai-vault" # Optionally change the name to something to suit you (lower case and hyphens only_)
   vpc_cidr       = "172.22.0.0/16" # Optionally change this to a RFC1818 Cidr
   aws_region     = "eu-west-1" # Change this to the AWS region you want run your AI-Vault in.
   tags = {
@@ -56,9 +56,9 @@ output "eks_cluster_name" {
   value = module.cluster.cluster_name
 }
 
-output "database_cluster_endpoint" {
-  value = "${module.database.cluster_endpoint}"
-}
+#output "database_cluster_endpoint" {
+#  value = "${module.database.cluster_endpoint}"
+#}
 
 output "cluster_master_username" {
   value = "${module.database.cluster_master_username}"
@@ -66,13 +66,14 @@ output "cluster_master_username" {
 
 output "cluster_master_password" {
   value = "${module.database.cluster_master_password}"
+  sensitive = true
 }
 
 
-#terraform {
-#  backend "s3" {
-#    bucket = "myaivault.tfstate.bucket"
-#    key    = "terraform.tfstate"
-#    region = "eu-west-1"
-#  }
-#}
+terraform {
+  backend "s3" {
+    bucket = "ai-vault-tester-tf"
+    key    = "terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
