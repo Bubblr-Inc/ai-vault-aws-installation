@@ -15,7 +15,7 @@
 
 [Installing the Chart](#Installation)
 
-[Initialising your installation](#Initialising)
+[Initialising your installation](#nitialising-your-installation)
 
 
 ## Summary
