@@ -271,9 +271,12 @@ ingress:
 ```
 Retry the install command, note this time it says update, rather than install.
 ```
-helm update ai-vault-helm-release --namespace ai-vault-ns ./* 
+helm updgrade ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
-
+### Create Service Role for AWS License Manager
+```
+aws ec2 describe-subnets --region <your region>
+```
 ### Uninstall Helm Chart
 ```
 helm uninstall ai-vault-helm-release -n ai-vault-ns
