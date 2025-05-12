@@ -196,7 +196,7 @@ Edit the chart's built in values.yaml file, please modfiy the the following valu
 These are found in the env section. (Note - you can create a new values file called myValues.yaml or similar to over-ride the built in values file.  You will need to remember to supply this at the command line when you install the chart using the helm --values flag.
 
 ```
-  gpcBaseUrl: "aivault.myorg.tld"  #Change this to your own value
+  gpcBaseUrl: "https://aivault.myorg.tld"  #Change this to your own value
   gptDataDbUser: "yourdbuser"     #Change this to the database user from the Running database
   gptDataDbHost: "yourdbhost" #change this to the postgres writer name
   gptDataDbName: "ai_vault"
