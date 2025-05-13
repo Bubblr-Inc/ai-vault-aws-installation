@@ -125,6 +125,15 @@ Authenticate and register in kubeconfig file
 aws eks update-kubeconfig --region <YOU REGION CODE > --name <MY EKS CLUSTER NAME>
 ```
 
+assume the correct context
+```
+kubectl config get-contexts
+```
+```
+kubectl config use-context <ENTER THE CORRECT CONTEXT NAME FROM THE LIST YOU GET ABOVE>
+```
+
+
 ### Create a IAM policy for license management 
 Create an IAM policy license - we will attach this to the ai-vault-sa in the next step.
 Clone this repository 
@@ -151,12 +160,20 @@ this should output something like this (below), make a note of the Arn value
     }
 }
 ```
+### Create a License Manager Role if yo do not currently have any AWS Marketplace licensed products
+In AWS console navigate to License Manager and select "Start using License Manager".
+
 
 ### Create an ai-vault namespace and add an ai-vault-sa service account
 Here you are going to create the ai-vault namespace
 ```
 kubectl create namespace ai-vault-ns
 ```
+Now you will set the correct namespace
+```
+kubectl config set-context --current --namespace=ai-vault-ns
+```
+
 Now the service account, you will need to update the line that says and << REPLACE THIS WITH THE ARN CREATED IN THE PREVIOUS POLICY  with the ARN from the previous output. And update the --cluster < ENTER_YOUR_CLUSTER_NAME_HERE > With your cluster name e.g my-ai-vault
 ```
 eksctl create iamserviceaccount \
@@ -188,7 +205,7 @@ Install the chart to your kubernetes cluster. This example will install to the n
 ```
 mkdir awsmp-chart && cd awsmp-chart
 
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-multi-helm --version 0.4.0
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-multi-helm --version 1.0.0
 
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 ```
@@ -236,14 +253,14 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 
 1. Decide the hostname / url you wish to use to connect to your ai-vault instance. e.g ai-vault.mydomain.com
 2. Create or  an ACM TLS Certificate https://docs.aws.amazon.com/res/latest/ug/acm-certificate.html. _Note_ if you are using an existing ACM the skip to the next step.
+3. If you create a new certificate, validate the certificate with the appropriate DNS information in your Domain DNS records (CNAME and Value) and wait for it to be verified. 
 
-3. Make an a note of the ACM certifcates' ARN
+4. Make an a note of the ACM certifcates' ARN
 
-4. Make a note of your public subnets ids. These can be found in the AWS console or via the AWS CLI command:
+5. Make a note of your public subnets ids. These can be found in the AWS console or via the AWS CLI command:
    ```aws ec2 describe-subnets --region <your region>```
-6. Create a file called ingress.yaml
-
-7. Add an ingress section to the ingress.yaml file like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as the EKS cluster you are deploying the helm chart to.
+   
+6. Update the ingress section in the values.yaml file like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as the EKS cluster you are deploying the helm chart to.
 
 ```
 ingress:
@@ -258,25 +275,31 @@ ingress:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:123456789:certificate/50d7e14a-2345-4241-4567-d8d208f22b67 #replace with your own ACM Certificate ARN
     alb.ingress.kubernetes.io/group.name: ai-vault
     alb.ingress.kubernetes.io/load-balancer-name: ai-vault
-  hosts:
-    - host:
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: ai-vault-svc
-              port:
-                number: 80
+  
 ```
 Retry the install command, note this time it says update, rather than install.
 ```
-helm updgrade ai-vault-helm-release --namespace ai-vault-ns ./* 
+helm upgrade ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
 ### Create Service Role for AWS License Manager
 ```
 aws ec2 describe-subnets --region <your region>
 ```
+This concludes the install process. You now need to update your domain DNS with the CNAME record for the load balancer created. 
+In AWS console go to EC@ Load Balancers
+Look for the correct load balancer and copy the DNS name. You then need to enter this as a CNAME entry in your DNS records for the correct domain that you have specified th eai vault installation to use.
+
+## Initialising your installation
+During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
+
+
+Before running any prompts you will need to get and enter an access key in order to validate your instance with the AI Seek Enterprise Engine. You can obtain a key by either sending an email direct to support@ethicalweb.ai and requesting a key or by using the contact form which is available from the app console once you are logged in. 
+
+
+Enter the Access Key by selecting Account>Settings>Enter Access Key
+
+## Additional Information
+
 ### Uninstall Helm Chart
 ```
 helm uninstall ai-vault-helm-release -n ai-vault-ns
@@ -289,14 +312,7 @@ Please see the following section on backup and restore for AI-Vault database.
 For health checks see the following section.
 ![Health Checks](doc/HEALTHCHECKS.md)
 
-## Initialising your installation
-During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
 
-
-Before running any prompts you will need to get and enter an access key in order to validate your instance with the AI Seek Enterprise Engine. You can obtain a key by either sending an email direct to support@ethicalweb.ai and requesting a key or by using the contact form which is available from the app console once you are logged in. 
-
-
-Enter the Access Key by selecting Account>Settings>Enter Access Key
 
 
 
