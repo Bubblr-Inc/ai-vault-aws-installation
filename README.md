@@ -288,21 +288,17 @@ helm upgrade ai-vault-helm-release --namespace ai-vault-ns ./*
 aws ec2 describe-subnets --region <your region>
 ```
 
-### Finalising th einstall and accessing the product:
+### Finalising the install and accessing the product:
 
 1.  update your domain DNS with the CNAME record for the load balancer created.
-In AWS console go to EC@ Load Balancers
+    In AWS console go to EC@ Load Balancers
 
-Look for the correct load balancer and copy the DNS name. You then need to enter this as a CNAME entry in your DNS records for the correct domain that you have specified th eai vault installation to use.
+    Look for the correct load balancer and copy the DNS name. You then need to enter this as a CNAME entry in your DNS records for the correct domain that you have specified th eai vault installation to use.
 
 3. Initialise your installation
-During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
-
-
-Before running any prompts you will need to get and enter an access key in order to validate your instance with the AI Seek Enterprise Engine. You can obtain a key by either sending an email direct to support@ethicalweb.ai and requesting a key or by using the contact form which is available from the app console once you are logged in. 
-
-
-Enter the Access Key by selecting Account>Settings>Enter Access Key
+   During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
+   Before running any prompts you will need to get and enter an access key in order to validate your instance with the AI Seek Enterprise Engine. You can obtain a key by either sending an email direct to support@ethicalweb.ai and requesting a key or by using the contact form which is available from the app console once you are logged in. 
+   Enter the Access Key by selecting Account>Settings>Enter Access Key
 
 ## Additional Information
 
