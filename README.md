@@ -213,15 +213,17 @@ Edit the chart's built in values.yaml file, please modfiy the the following valu
 These are found in the env section. (Note - you can create a new values file called myValues.yaml or similar to over-ride the built in values file.  You will need to remember to supply this at the command line when you install the chart using the helm --values flag.
 
 ```
-  gpcBaseUrl: "https://aivault.myorg.tld"  #Change this to your own value
-  gptDataDbUser: "yourdbuser"     #Change this to the database user from the Running database
-  gptDataDbHost: "yourdbhost" #change this to the postgres writer name
-  gptDataDbName: "ai_vault"
+ env:
+  gpcBaseUrl: "https//aivault.myorg.tld"  #Replace this with your domain name you want to use to access ai vault
+  gptDataDbUser: "yourdbuser"  # Replace this with your db user
+  gptDataDbHost: "yourdbhost"  # Replace this with your db host
+  gptDataDbName: "ai_vault"    # Optional replace this with your db name
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
-  mailFrom: "support@bubblr.com"
-  mailServer: "smtp.office.365.com"
-  mailServerPort: "587"
-  smtpLoginId: "support@bubblr.com"
+  mailFrom: "yourmailuser"  # Replace this with your mail from address
+  mailServer: "smtp.office.365.com" # Replace this with your mailserver
+  mailServerPort: "587"  # Replace this with your mailserver port
+  initialUser: "support@bubblr.com" # Replace this with your email address for the initial user login
+  smtpLoginId: "yoursmtploginid"  ## Replace this with your smtp login ID
   aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
 ```
 
