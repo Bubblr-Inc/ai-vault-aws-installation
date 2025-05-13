@@ -287,11 +287,15 @@ helm upgrade ai-vault-helm-release --namespace ai-vault-ns ./*
 ```
 aws ec2 describe-subnets --region <your region>
 ```
-This concludes the install process. You now need to update your domain DNS with the CNAME record for the load balancer created. 
+
+### Finalising th einstall and accessing the product:
+
+1.  update your domain DNS with the CNAME record for the load balancer created.
 In AWS console go to EC@ Load Balancers
+
 Look for the correct load balancer and copy the DNS name. You then need to enter this as a CNAME entry in your DNS records for the correct domain that you have specified th eai vault installation to use.
 
-## Initialising your installation
+3. Initialise your installation
 During install you will recieve a link to your new login page. You can log in initially using the email address which you supplied as the initial user email. This user wll have superuser privileges. When you enter the email address and click login, you will recieve an email with a claim link. Simply click that link and you will be logged in. 
 
 
