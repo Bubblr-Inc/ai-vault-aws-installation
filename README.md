@@ -11,7 +11,7 @@
 
 [Security Statement](doc/SECURITYSTATEMENT.md)
 
-[Prepare for your Installation](#Prepare-for-your-installation)   <<<<<< Installtion Starts Here
+[Prepare for your Installation](#Prepare-for-your-installation)   <<<<<< Installation Starts Here
 
 [Installing the Chart](#Installation)
 
