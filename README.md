@@ -285,7 +285,7 @@ helm upgrade ai-vault-helm-release --namespace ai-vault-ns ./*
 ```
 ### Create Service Role for AWS License Manager
 ```
-aws ec2 describe-subnets --region <your region>
+aws iam create-service-linked-role --aws-service-name license-manager.amazonaws.com
 ```
 
 ### Finalising the install and accessing the product:
