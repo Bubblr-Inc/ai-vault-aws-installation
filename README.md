@@ -209,7 +209,7 @@ helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-v
 
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 ```
-Edit the chart's built in values.yaml file, please modfiy the the following values : gpcBaseUrl, gptDataDbUser, gptDataDbHost
+Edit the chart's built in values.yaml file, please modfiy the the values indicated below:
 These are found in the env section. (Note - you can create a new values file called myValues.yaml or similar to over-ride the built in values file.  You will need to remember to supply this at the command line when you install the chart using the helm --values flag.
 
 ```
@@ -245,7 +245,9 @@ And finally your e-mail address password.
      --from-literal=password='<ENTER PASSWORD>'
 ```
 
-Now install the chart
+Optionally install the chart now 
+If you want to install before you create the load balancer then you can do so but will need to comment out the section for Ingreess from the values file.
+
 ```
 helm install ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
@@ -279,7 +281,13 @@ ingress:
     alb.ingress.kubernetes.io/load-balancer-name: ai-vault
   
 ```
-Retry the install command, note this time it says update, rather than install.
+If you have not already installed then you can now run the Install Command
+
+```
+helm install ai-vault-helm-release --namespace ai-vault-ns ./* 
+```
+If you have already installed then you will need ot upgrade rather than rthan install
+
 ```
 helm upgrade ai-vault-helm-release --namespace ai-vault-ns ./* 
 ```
