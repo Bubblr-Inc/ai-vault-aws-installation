@@ -136,6 +136,7 @@ kubectl config use-context <ENTER THE CORRECT CONTEXT NAME FROM THE LIST YOU GET
 
 ### Create a IAM policy for license management 
 Create an IAM policy license - we will attach this to the ai-vault-sa in the next step.
+
 Clone this repository 
 ```
 git clone git@github.com:Bubblr-Inc/ai-vault-aws-installation.git
